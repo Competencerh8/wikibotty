@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Chatbot Ajax</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+
+    <script>
+    // fonction qui initie l'openstreetmap avec les coordonnées lon, lat
+      function init(lon, lat) {
+        map = new OpenLayers.Map("basicMap");
+        var mapnik = new OpenLayers.Layer.OSM();
+        map.addLayer(mapnik);
+        map.setCenter(new OpenLayers.LonLat(lon,lat) // Centre de la carte
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transformation de WGS 1984
+            new OpenLayers.Projection("EPSG:900913") // en projection Mercator sphérique
+          ), 15 // Zoom level
+        );
+    	}
+    </script>
+    
+</head>
+
+<header class="header">
+  <div class="grid">
+        <h1 "  style="background-color:#006699 ;text-align:left;padding-bottom: 1em;padding-top: 1em;">Welcome on chabotty!</h1>
+  </div>
+</header>
+
+
+<body onload="init(13.404954,52.520008);"  style="background-color: #00b3b3 ;">
+
+<div id = page >
+
+<div id = "chat">
+Speak with the chatbot:
+<input type="text" id="sentence">
+<button id="ask">Ask</button>
+<div id="answer"><br>WikiChatbot: Bonjour !</div>
+</div>
+
+<div id = "recherche">
+<div id="basicMap"></div>
+<div id = "resume"></div>
+</div>
+
+<div id = "load">
+    <img src="{{ url_for('static',filename='noun_Man_68200.png') }}" height="70" width="70">
+</div>
+
+</div>
+
+
+<footer class="header js-header">
+  <div class="grid">
+        <h1 "  style="background-color: #006699 ;text-align: center;padding-bottom: 1em;padding-top: 1em;" >See you soon!
+<a href = "http://twitter.com/competencerh2"><i class= "fa fa-twitter" style="float:left;"> </i></a>
+
+        </h1>
+  
+  </div>
+</footer>
+
+<script src="/static/script.js?r={{reload}}"> // rechargé le javascript à chaque chargement de la page, évite la mise en cache</script>
+
+</body>
+</html>

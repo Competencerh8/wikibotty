@@ -1,0 +1,9 @@
+{"0": {"q": "Bonjour!", "a": ["bonjour", "salut"]}, 
+"1": {"q": "Comment allez-vous ?", "a": ["bien", "pas bien", "très bien", "super"]}, 
+"2": {"q": "Aimez-vous votre séjour à Paris ?", "a": {"y": ["oui"], "n": ["non"]}}, 
+"3": {"q": {"y": "Quel lieu souhaiteriez vous visiter ?", "n": "Nous vous souhaitons un bon retour !"}, "a": ["Louvre", "Palais_Garnier", "Centre_Georges_Pompidou"]},
+ "4": "Aucun lieu trouvé, réessayez", 
+ "5": {"q": {"y": "Quel autre lieu souhaiteriez vous visitez ?", "n": "Bonne visite !"}}, 
+"error": "Je ne sais pas quoi vous dire, je n'ai pas été programmé pour répondre à ça ...",
+"nopage": "The page you specified doesn't exist."
+}
